@@ -35,7 +35,7 @@ alias gf='git fetch'
 alias gc='git commit'
 
 alias h="history"
-alias p='cd ~/Projects7
+alias p='cd ~/Projects'
 alias q='exit'
 alias s='sudo'
 
@@ -56,3 +56,8 @@ alias -g X='| xargs'
 alias -s gz='tar -xzvf'
 alias -s html='open'
 alias -s {mp3,mp4,wav,mkv,m4v,m4a,wmv,avi,mpeg,mpg,vob,mov,rm}='mplayer'
+
+# custom
+alias reflesh='exec $SHELL -l'
+alias vi='nvim'
+alias init.vim='vi ~/.config/nvim/init.vim'
