@@ -50,6 +50,7 @@ alias -g A='| awk'
 alias -g C='| pbcopy'
 alias -g G='| grep --color=auto' # 鉄板
 alias -g H='| head' # 当然tailもね
+alias -g T='| tail' # 当然tailもね
 alias -g L='| less -R'
 alias -g X='| xargs'
 
@@ -62,4 +63,3 @@ alias -s {mp3,mp4,wav,mkv,m4v,m4a,wmv,avi,mpeg,mpg,vob,mov,rm}='mplayer'
 alias reflesh='exec $SHELL -l'
 alias vi='nvim'
 alias init.vim='vi ~/.config/nvim/init.vim'
-
