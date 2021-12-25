@@ -15,10 +15,11 @@ alias agu='sudo apt update'
 
 alias c='pbcopy'
 alias grep='grep --color=auto '
-alias sudo='sudo '
 
 # docker
 alias d='docker'
+alias de='docker exec -it'
+alias dr='docker run -dit'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 
@@ -35,7 +36,7 @@ alias gf='git fetch'
 alias gc='git commit'
 
 alias h="history"
-alias p='cd ~/Projects'
+alias pj='cd ~/Projects'
 alias q='exit'
 alias s='sudo'
 
@@ -61,3 +62,4 @@ alias -s {mp3,mp4,wav,mkv,m4v,m4a,wmv,avi,mpeg,mpg,vob,mov,rm}='mplayer'
 alias reflesh='exec $SHELL -l'
 alias vi='nvim'
 alias init.vim='vi ~/.config/nvim/init.vim'
+
