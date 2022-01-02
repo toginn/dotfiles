@@ -8,11 +8,11 @@ checkIsRoot() {
 }
 
 installPkg() {
-  if [[ $1 == 'nvim' ]] then
+  if [[ $1 = "nvim" ]]; then
     git clone https://github.com/neovim/neovim
     cd neovim && make
     make install
-  elif [[ $(command -v apt 2> dev/null) ]]
+  elif [[ $(command -v apt 2> dev/null) ]];
     echo "apt not found"
   elif [[ $(command -v $1) ]];
     echo "skipped to install $1; already installed"
