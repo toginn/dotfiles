@@ -1,65 +1,99 @@
-# cd
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+# region alias functions
 
-# interactive
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
+#------------------------
+# Utility Alias
+#------------------------
+apt_alias() {
+  alias api='sudo apt install'
+  alias apr='sudo apt remove'
+  alias apu='sudo apt update'
+  alias apug='sudo apt upgrade'
+  alias aps='apt show'
+  alias apl='apt list'
+}
 
-# config
-alias agi='sudo apt install'
-alias agr='sudo apt remove'
-alias agu='sudo apt update'
 
-alias c='pbcopy'
-alias grep='grep --color=auto '
+pipe_alias() {
+  alias -g A='| awk'
+  alias -g C='| pbcopy'
+  alias -g G='| grep --color=auto'
+  alias -g H='| head'
+  alias -g T='| tail'
+  alias -g L='| less -R'
+  alias -g X='| xargs'
+}
 
-# docker
-alias d='docker'
-alias de='docker exec -it'
-alias dr='docker run -dit'
-alias dcu='docker compose up -d'
-alias dcd='docker compose down'
+default_open_app_alias() {
+  alias -s gz='tar -xzvf'
+  alias -s zip='unzip'
+  alias -s html='open'
+  alias -s {mp3,mp4,wav,mkv,m4v,m4a,wmv,avi,mpeg,mpg,vob,mov,rm}='mplayer'
+}
 
-# git
-alias g='git'
-alias ga='git add'
-alias gd='git diff'
-alias gs='git status'
-alias gp='git push'
-alias gb='git branch'
-alias gst='git status'
-alias gco='git checkout'
-alias gf='git fetch'
-alias gc='git commit'
+shell_alias() {
+  alias reflesh='exec $SHELL -l'
+  alias c='pbcopy'
+  alias h="history"
+  alias q='exit'
+}
 
-alias h="history"
-alias pj='cd ~/Projects'
-alias q='exit'
-alias s='sudo'
+#-------------------------
+# Application Alias
+#-------------------------
+docker_alias() {
+  alias d='docker'
+  alias de='docker exec -it'
+  alias dr='docker run -dit'
+  alias dcu='docker compose up -d'
+  alias dcd='docker compose down'
+}
 
-# yarn
-alias y='yarn'
-alias ya='yarn add'
-alias yad='yarn add --save-dev'
+exa_alias() {
+  if [[ $(command -v exa) ]]; then
+    alias e='exa --icons'
+    alias l=e
+    alias ls=e
+    alias ea='exa -a --icons'
+    alias la=ea
+    alias ee='exa -aahl --icons'
+    alias ll=ee
+    alias et='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+    alias lt=et
+    alias eta='exa -T -a -I "node_modules|.git|.cache" --color=always --icons | less -r'
+    alias lta=eta
+    alias l='clear && ls'
+  fi
+}
 
-# global alias
-alias -g A='| awk'
-alias -g C='| pbcopy'
-alias -g G='| grep --color=auto' # 鉄板
-alias -g H='| head' # 当然tailもね
-alias -g T='| tail' # 当然tailもね
-alias -g L='| less -R'
-alias -g X='| xargs'
+yarn_alias() {
+  alias y='yarn'
+  alias yas='yarn add --save'
+  alias yad='yarn add --save-dev'
+}
 
-# auto open
-alias -s gz='tar -xzvf'
-alias -s html='open'
-alias -s {mp3,mp4,wav,mkv,m4v,m4a,wmv,avi,mpeg,mpg,vob,mov,rm}='mplayer'
+#---------------------------
+# User Alias
+#---------------------------
 
-# custom
-alias reflesh='exec $SHELL -l'
+custom_folder_alias() {
+  alias pj='cd ~/Projects'
+  alias dl='cd ~/Download'
+}
+
+# endregion
+
+#-------------------------------
+# Alias Settings
+#-------------------------------
+apt_alias
+docker_alias
+yarn_alias
+pipe_alias
+default_open_app_alias
+shell_alias
+custom_folder_alias
+exa_alias
+
+# other alias
 alias vi='nvim'
 alias init.vim='vi ~/.config/nvim/init.vim'
