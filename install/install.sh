@@ -29,6 +29,11 @@ apt update
 apt upgrade -y
 
 # Applications
+installPkg ca-certificates
+installPkg curl
+installPkg gnupg
+installPkg lsb-release
+
 installPkg zsh
 installPkg exa
 installPkg tmux

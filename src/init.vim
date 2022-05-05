@@ -59,9 +59,6 @@ nnoremap * 1*N
 " <Leader>割当
 let mapleader = "\<Space>"
 
-" colorscheme
-colorscheme molokai
-
 "=========================================
 " プラグイン設定
 "=========================================
@@ -76,6 +73,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-expand-region'
+Plug 'rhysd/clever-f.vim'
 
 if exists('g:vscode')
   Plug 'asvetliakov/vim-easymotion', { 'as': 'vsc-easymotion' }
